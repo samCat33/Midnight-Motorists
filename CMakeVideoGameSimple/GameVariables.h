@@ -14,7 +14,7 @@ extern SDL_Renderer* RENDERER;
 
 
 extern bool playerIsAlive;
-extern bool isRunning;
+extern bool gameRunning;
 extern bool gameStarted;
 
 extern int WINDOW_W;
@@ -41,6 +41,18 @@ extern const char* FINISH_LINE_PATH;
 extern const char* BIG_TEXT_PATH;
 extern const char* FONT_PATH;
 extern const char* ATARI_LINE_PATH;
+extern const char* GAME_OVER_PATH;
+extern const char* CURSOR_PATH;
+extern const char* RESTART_BUTTON_PATH;
+extern const char* TITLE_PATH;
+extern const char* MENU_BUTTONS_PATH;
+
+extern const int RESTART_BUTTON_X_OFFSET;
+extern const int MENU_BUTTONS_WIDTH;
+extern const int MENU_BUTTONS_HEIGHT;
+extern const int MENU_BUTTONS_X_OFFSET;
+extern const int MENU_BUTTONS_Y_OFFSET;
+extern const int NUM_OF_MENU_BUTTONS;
 
 extern const int BIG_TEXT_SHIFT;
 extern const int FONT_SHIFT;
@@ -68,10 +80,13 @@ extern const int ENEMY_HITBOX_H;
 extern const int ENEMY_HITBOX_W;
 
 extern int ENEMY_SPAWNRATE_MS;
-extern int FINISHLINE_SPAWNRATE_MS;
+extern const int START_ENEMY_MS;
+extern const int LAP_SPAWN_RATE;
 extern const int ENEMY_HIT_COOLDOWN;
 extern int ENEMY_SPAWNX_RANGE;
 extern int ENEMY_SPAWNY_RANGE;
+
+extern int DIFFICULTY_MODIFIER;
 
 extern int LINE_WIDTH;
 extern const double FIRST_DIGIT_FPS;

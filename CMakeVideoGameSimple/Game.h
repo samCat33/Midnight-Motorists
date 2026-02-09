@@ -7,6 +7,7 @@
 #include "SpriteComponent.h"
 #include "Collision.h"
 #include "KeyboardController.h"
+#include "ButtonComponent.h"
 #include "GameVariables.h"
 #include "TextureManager.h"
 
@@ -24,13 +25,12 @@ struct Game
     static int numFrames;
     static SDL_TimerID timerID;
     static vector<ColliderComponent*> colliders;
+    bool menuIsOn = false;
 
     int x = 0;
     int y = 0;
     int lane = 0;
     double timeInterval = 0;
-
-    SDL_Texture* carTexture = nullptr;
 
     void init();
     void runGame();

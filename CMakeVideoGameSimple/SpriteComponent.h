@@ -13,8 +13,8 @@ class SpriteComponent : public Component {
 	
 	private:
 
-		TransformComponent *transform = NULL;
-		SDL_Texture *texture = NULL;
+		TransformComponent *transform = nullptr;
+		SDL_Texture *texture = nullptr;
 		SDL_Rect destRect = {0,0,0,0};
 		SDL_Rect srcRect = { 0,0,0,0 };
 
@@ -23,9 +23,10 @@ class SpriteComponent : public Component {
 		bool animated = false;
 		bool dying = false;
 		bool rotated = false;
-		bool customSrcRectX = false;
 		double angle = 0;
 		int srcRectW = 0;
+		int srcRectH = 0;
+		int srcRectY = 0;
 		int frames = 1;
 		double fps = 1;
 		int oneThousandOverFPS = 1;
@@ -35,6 +36,7 @@ class SpriteComponent : public Component {
 		double resetTime = 0;
 		int customIterations = 0;
 		bool iterating = true;
+		bool hidden = false;
 		bool test = false;
 
 		void setTexture(const char* path) {
@@ -54,7 +56,8 @@ class SpriteComponent : public Component {
 		}
 
 		SpriteComponent(const char* path, double angle, int frames,
-		double fps, int srcRectW = 0) {
+		double fps, int srcRectW = 0, int srcRectH = 0,
+		int srcRectY = 0) {
 			setTexture(path);
 			rotated = true;
 			animated = true;
@@ -62,23 +65,28 @@ class SpriteComponent : public Component {
 			this->frames = frames;
 			this->fps = fps;
 			this->srcRectW = srcRectW;
+			this->srcRectH = srcRectH;
+			this->srcRectY = srcRectY;
 ;		}
 
+		//Deallocate textures
 		~SpriteComponent(){
-			SDL_DestroyTexture(texture);
+			if (texture != nullptr) {
+				SDL_DestroyTexture(texture);
+			}
 		}
 
 
 		//verified
 		void init() override{
+			if (!entity->hasComponent<TransformComponent>()) {
+				entity->addComponent<TransformComponent>();
+			}
+
 			transform = &entity->getComponent<TransformComponent>();
-			if (srcRectW < 1) {
-				srcRect.w = transform->width;
-			}
-			else {
-				srcRect.w = srcRectW;
-			}
-			srcRect.h = transform->height;
+			srcRect.w = (srcRectW < 1) ? transform->width : srcRectW;
+			srcRect.h = (srcRectH < 1) ? transform->height : srcRectH;
+			srcRect.y = (srcRectY < 1) ? 0 : srcRectY;
 			
 			width = srcRect.w;
 			height = srcRect.h;
@@ -123,7 +131,7 @@ class SpriteComponent : public Component {
 						showSrcRectStats();
 					}
 
-					if (!customSrcRectX) {
+					if (frames > 0) {
 						srcRect.x = srcRect.w * (iterations % frames);
 					}
 
@@ -139,12 +147,14 @@ class SpriteComponent : public Component {
 		void hide() {
 			srcRect.w = 0;
 			srcRect.h = 0;
+			hidden = true;
 		}
 
 
 		void show() {	
 			srcRect.w = width;
 			srcRect.h = height;
+			hidden = false;
 		}
 
 		void changeSrcRectW(int srcRectW) {
@@ -153,12 +163,15 @@ class SpriteComponent : public Component {
 		}
 		void changeSrcRectX(int srcRectX) {
 			srcRect.x = srcRectX;
-			customSrcRectX = true;
 		}
 		void showSrcRectStats() {
 			cout << "Src Rect W: " << srcRect.w << endl;
 			cout << "Src Rect H: " << srcRect.h << endl;
 			cout << "Src Rect X: " << srcRect.x << endl;
+		}
+
+		SDL_Rect& getDestRect() {
+			return destRect;
 		}
 };
 

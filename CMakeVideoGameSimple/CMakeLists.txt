@@ -34,7 +34,7 @@ set(HEADERS
 	"Vector2D.h"
 )
 
-add_executable(CMakeVideoGame ${SOURCES} ${HEADERS})
+add_executable(CMakeVideoGame ${SOURCES} ${HEADERS}   "ButtonComponent.h" "MainMenu.cpp")
 
 target_link_libraries(CMakeVideoGame
 	SDL2::SDL2
@@ -60,4 +60,10 @@ if(WIN32)
             C:/Users/Owner/vcpkg/installed/x64-windows/debug/bin
             $<TARGET_FILE_DIR:CMakeVideoGame>
     )
+
+	add_custom_command(TARGET CMakeVideoGame POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/assets
+        ${CMAKE_BINARY_DIR}/assets
+)
 endif()

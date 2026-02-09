@@ -5,7 +5,7 @@
 SDL_Renderer* RENDERER = nullptr;
 
 extern bool playerIsAlive = true;
-extern bool isRunning = false;
+extern bool gameRunning = false;
 extern bool gameStarted = false;
 const double DELTA_TIME = 1000/60;
 const double GAME_START_DELAY = 4.0;
@@ -36,6 +36,18 @@ const char* FINISH_LINE_PATH = "Assets/Finish Line.png";
 const char* BIG_TEXT_PATH = "Assets/Big Text.png";
 const char* FONT_PATH = "Assets/Midnight Motorists Font.png";
 const char* ATARI_LINE_PATH = "Assets/Atari Line.png";
+const char* GAME_OVER_PATH = "Assets/Game Over.png";
+const char* CURSOR_PATH = "Assets/Cursor.png";
+const char* RESTART_BUTTON_PATH = "Assets/Restart.png";
+const char* TITLE_PATH = "Assets/Title Screen.png";
+const char* MENU_BUTTONS_PATH = "Assets/Buttons.png";
+
+const int RESTART_BUTTON_X_OFFSET = 172;
+const int MENU_BUTTONS_WIDTH = 87;
+const int MENU_BUTTONS_HEIGHT = 23;
+const int MENU_BUTTONS_X_OFFSET = 14;
+const int MENU_BUTTONS_Y_OFFSET = 6;
+const int NUM_OF_MENU_BUTTONS = 6;
 
 const int BIG_TEXT_SHIFT = 225;
 const int FONT_SHIFT = 24;
@@ -63,13 +75,16 @@ const int ENEMY_HITBOX_H = 100;
 const int ENEMY_HITBOX_W = 100;
 
 int ENEMY_SPAWNRATE_MS = 3000;
-int FINISHLINE_SPAWNRATE_MS = 15000;
+const int START_ENEMY_MS = 3000;
+const int LAP_SPAWN_RATE = 8000;
 const int ENEMY_HIT_COOLDOWN = 3000;
 int ENEMY_SPAWNX_RANGE = 0;
 int ENEMY_SPAWNY_RANGE = 0;
+
+int DIFFICULTY_MODIFIER = 2;
 
 int LINE_WIDTH = WINDOW_W * 0.15;
 const double FIRST_DIGIT_FPS = 20;
 const double MPH_DIGIT_FPS = 12;
 
-const int STARTING_LIVES = 5;
+const int STARTING_LIVES = 3;

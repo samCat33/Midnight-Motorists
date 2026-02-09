@@ -12,10 +12,8 @@
     ]
   },
   "ExpandedNodes": [
-    "",
-    "\\out",
-    "\\out\\build"
+    ""
   ],
-  "SelectedNode": "\\MyOwnVideoGame.sln",
+  "SelectedNode": "\\Game.cpp",
   "PreviewInSolutionExplorer": false
 }

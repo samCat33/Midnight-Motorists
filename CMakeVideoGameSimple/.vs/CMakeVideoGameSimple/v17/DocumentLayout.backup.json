@@ -1,9 +1,68 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Owner\\Documents\\C\u002B\u002BProjects\\CMakeVideoGameSimple\\",
+  "WorkspaceRootPath": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\C\u002B\u002BProjects\\CMakeVideoGameSimple\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\GameVariables.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameVariables.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\SpriteComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SpriteComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ButtonComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ButtonComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\TransformComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TransformComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Vector2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Vector2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Vector2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Vector2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ECS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ECS.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ColliderComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ColliderComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\GameVariables.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameVariables.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\KeyboardController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:KeyboardController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Collision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Collision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
@@ -17,8 +76,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 12,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameVariables.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\GameVariables.h",
+              "RelativeDocumentMoniker": "GameVariables.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\GameVariables.h",
+              "RelativeToolTip": "GameVariables.h",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-01T22:03:12.958Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -29,20 +101,193 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Vector2D.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Vector2D.h",
+              "RelativeDocumentMoniker": "Vector2D.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Vector2D.h",
+              "RelativeToolTip": "Vector2D.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-09T20:24:19.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Vector2D.cpp",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Vector2D.cpp",
+              "RelativeDocumentMoniker": "Vector2D.cpp",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Vector2D.cpp",
+              "RelativeToolTip": "Vector2D.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-09T20:24:11.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "KeyboardController.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\KeyboardController.h",
+              "RelativeDocumentMoniker": "KeyboardController.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\KeyboardController.h",
+              "RelativeToolTip": "KeyboardController.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADEAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-02T03:54:14.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ECS.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ECS.h",
+              "RelativeDocumentMoniker": "ECS.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ECS.h",
+              "RelativeToolTip": "ECS.h",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAiwK0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-02T03:27:43.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TransformComponent.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\TransformComponent.h",
+              "RelativeDocumentMoniker": "TransformComponent.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\TransformComponent.h",
+              "RelativeToolTip": "TransformComponent.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-01T23:18:29.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpriteComponent.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\SpriteComponent.h",
+              "RelativeDocumentMoniker": "SpriteComponent.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\SpriteComponent.h",
+              "RelativeToolTip": "SpriteComponent.h",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAABgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-28T13:42:42.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ButtonComponent.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ButtonComponent.h",
+              "RelativeDocumentMoniker": "ButtonComponent.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ButtonComponent.h",
+              "RelativeToolTip": "ButtonComponent.h",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAEwDMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-01T23:16:17.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Game.h",
+              "RelativeDocumentMoniker": "Game.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Game.h",
+              "RelativeToolTip": "Game.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-28T13:49:34.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAcwDQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-28T13:48:16.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CMakeLists.txt",
-              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\C\u002B\u002BProjects\\CMakeVideoGameSimple\\CMakeLists.txt",
-              "RelativeDocumentMoniker": "CMakeLists.txt",
-              "ToolTip": "C:\\Users\\Owner\\Documents\\C\u002B\u002BProjects\\CMakeVideoGameSimple\\CMakeLists.txt",
-              "RelativeToolTip": "CMakeLists.txt",
-              "ViewState": "AgIAACIAAAAAAAAAAAAswDgAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-01-26T22:53:42.936Z",
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Game.cpp",
+              "RelativeDocumentMoniker": "Game.cpp",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Game.cpp",
+              "RelativeToolTip": "Game.cpp",
+              "ViewState": "AgIAAFIDAAAAAAAAAAAmwGADAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-28T13:37:14.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "ViewState": "AgIAAHwIAAAAAAAAAADgv4sIAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-28T13:39:02.463Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GameVariables.cpp",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\GameVariables.cpp",
+              "RelativeDocumentMoniker": "GameVariables.cpp",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\GameVariables.cpp",
+              "RelativeToolTip": "GameVariables.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwFMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-28T13:30:53.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ColliderComponent.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ColliderComponent.h",
+              "RelativeDocumentMoniker": "ColliderComponent.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\ColliderComponent.h",
+              "RelativeToolTip": "ColliderComponent.h",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-01T23:34:34.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Collision.h",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Collision.h",
+              "RelativeDocumentMoniker": "Collision.h",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\Collision.h",
+              "RelativeToolTip": "Collision.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-02T02:52:21.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "CMakeLists.txt",
+              "ToolTip": "C:\\Users\\Owner\\Documents\\GitHub\\Midnight-Motorists\\CMakeVideoGameSimple\\CMakeLists.txt",
+              "RelativeToolTip": "CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-26T22:53:42.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "CMake Overview Pages",
               "DocumentMoniker": "CMake Overview Pages",
               "ToolTip": "CMake Overview Pages",

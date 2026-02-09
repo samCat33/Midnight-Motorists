@@ -24,6 +24,8 @@ int main(int argc, char* argv[]) {
 		cout << "Could not get display mode!" << endl;
 	}
 
+	SDL_ShowCursor(false);
+
 	/* Set our WINDOW_W and WINDOW_H variables to 
 	*  represent the width and height of the user's screen
 	*  scaled according to the proportion of the screen
@@ -52,7 +54,7 @@ int main(int argc, char* argv[]) {
 	game.init();
 	
 	//This is the core of where everything runs
-	while (isRunning) {
+	while (gameRunning) {
 		game.runGame();
 	}
 
