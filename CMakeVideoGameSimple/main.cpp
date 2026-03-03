@@ -19,6 +19,14 @@ int main(int argc, char* argv[]) {
 		cout << "Could not start up SDL!" << endl;
 	}
 
+	if (Mix_Init(MIX_INIT_MP3) != 0) {
+		cout << "SDL_Mixer did not initialize properly!" << endl;
+	}
+	
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) != 0) {
+		cout << "SDL_Mixer could not set up audio!" << endl;
+	}
+
 	//If display mode could not be obtained
 	if (SDL_GetDesktopDisplayMode(0, &displayMode) != 0) {
 		cout << "Could not get display mode!" << endl;

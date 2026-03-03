@@ -4,7 +4,7 @@
 
 SDL_Renderer* RENDERER = nullptr;
 
-extern bool playerIsAlive = true;
+extern bool playerIsAlive = false;
 extern bool gameRunning = false;
 extern bool gameStarted = false;
 const double DELTA_TIME = 1000/60;
@@ -41,6 +41,8 @@ const char* CURSOR_PATH = "Assets/Cursor.png";
 const char* RESTART_BUTTON_PATH = "Assets/Restart.png";
 const char* TITLE_PATH = "Assets/Title Screen.png";
 const char* MENU_BUTTONS_PATH = "Assets/Buttons.png";
+const char* GAME_MUSIC_PATH = "Assets/Music.wav";
+const char* MAIN_MENU_MUSIC_PATH = "Assets/Main Menu Music.wav";
 
 const int RESTART_BUTTON_X_OFFSET = 172;
 const int MENU_BUTTONS_WIDTH = 87;

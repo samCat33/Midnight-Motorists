@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <SDL.h>
+#include <SDL_mixer.h>
 #include <vector>
 #include "TransformComponent.h"
 #include "SpriteComponent.h"

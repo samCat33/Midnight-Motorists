@@ -37,6 +37,8 @@ bool topSpeed = false;
 bool countdown = true;
 bool showLapBigText = false;
 bool changedBigText = false;
+bool gameMusicIsPlaying = false;
+bool menuMusicIsPlaying = false;
 
 int enemySpawnX;
 int enemySpawnY;
@@ -122,6 +124,9 @@ int* lapIterations = nullptr;
 //Used for spawning new lines
 double* topLeftLineX = nullptr;
 double* finishLineX = nullptr;
+
+Mix_Music *gameMusic = nullptr;
+Mix_Music *menuMusic = nullptr;
 
 //Add the edges of the road
 void AddBarrier(int x, int y) {
@@ -470,6 +475,19 @@ void Game::init() {
 	menuIsOn = true;
 	ShowMainMenu();
 	HideSettings();
+
+	gameMusic = Mix_LoadMUS(GAME_MUSIC_PATH);
+	menuMusic = Mix_LoadMUS(MAIN_MENU_MUSIC_PATH);
+
+	if (gameMusic == nullptr) {
+		cout << "ERROR! Game music failed to load!" << endl;
+		cout << Mix_GetError() << endl;
+	}
+
+	if (menuMusic == nullptr) {
+		cout << "ERROR! Menu music failed to load!" << endl;
+		cout << Mix_GetError() << endl;
+	}
 }
 
 //Handles the events of the game
@@ -487,7 +505,6 @@ void Game::handleEvents() {
 					.isSelected) {
 
 					lives = STARTING_LIVES;
-					playerIsAlive = true;
 					gameOver.getComponent<SpriteComponent>().hide();
 					restart.getComponent<SpriteComponent>().hide();
 					buttonVector.at(3)->getComponent<SpriteComponent>().hide();
@@ -584,6 +601,26 @@ void Game::update(){
 	manager.update();
 	SDL_GetMouseState(&mouseDestRect->x, &mouseDestRect->y);
 
+	//Music is handled
+	if (playerIsAlive) {
+		if (!gameMusicIsPlaying) {
+			Mix_PlayMusic(gameMusic, -1);
+			gameMusicIsPlaying = true;
+			menuMusicIsPlaying = false;
+		}
+	}
+	else {
+		if (!menuMusicIsPlaying) {
+			Mix_PlayMusic(menuMusic, -1);
+			menuMusicIsPlaying = true;
+			gameMusicIsPlaying = false;
+		}
+	}
+
+
+
+	
+
 	if (!menuIsOn) {
 		gameTime = currentTime - gameStartTime;
 		++numGameFrames;
@@ -635,10 +672,14 @@ void Game::update(){
 				roundStartTime = gameTime;
 				speedModifier = 0;
 				countdown = !countdown;
+				playerIsAlive = true;
 			}
 		}
 
+
+		//All after countdown ends
 		else {
+
 			//Used for making objects move as player speeds up
 			totalSpeed += STARTING_SPEED + speedModifier;
 
@@ -825,6 +866,7 @@ void Game::update(){
 
 
 			//ALL LOGIC FOR WHEN PLAYER IS STILL ALIVE
+			//Except Music, which is handled at the top
 			if (playerIsAlive) {
 
 				topLeftLineX = &(topLines.at(0)->

@@ -46,6 +46,8 @@ extern const char* CURSOR_PATH;
 extern const char* RESTART_BUTTON_PATH;
 extern const char* TITLE_PATH;
 extern const char* MENU_BUTTONS_PATH;
+extern const char* GAME_MUSIC_PATH;
+extern const char* MAIN_MENU_MUSIC_PATH;
 
 extern const int RESTART_BUTTON_X_OFFSET;
 extern const int MENU_BUTTONS_WIDTH;

@@ -109,9 +109,8 @@ class SpriteComponent : public Component {
 			destRect.w = transform->width * transform->scale;
 			destRect.h = transform->height * transform->scale;
 
-			//Play animations if there are animations while the player
-			//is alive
-			if (playerIsAlive && animated) {
+			//Play animations if there are animations 
+			if (animated) {
 
 				if (iterating) {
 
