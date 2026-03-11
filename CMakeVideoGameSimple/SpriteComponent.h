@@ -172,6 +172,10 @@ class SpriteComponent : public Component {
 		SDL_Rect& getDestRect() {
 			return destRect;
 		}
+
+		void setAngle(double angle) {
+			this->angle = angle;
+		}
 };
 
 #endif

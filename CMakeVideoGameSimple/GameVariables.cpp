@@ -43,6 +43,10 @@ const char* TITLE_PATH = "Assets/Title Screen.png";
 const char* MENU_BUTTONS_PATH = "Assets/Buttons.png";
 const char* GAME_MUSIC_PATH = "Assets/Music.wav";
 const char* MAIN_MENU_MUSIC_PATH = "Assets/Main Menu Music.wav";
+const char* COUNTDOWN_SOUND_PATH = "Assets/Countdown.wav";
+const char* GO_SOUND_PATH = "Assets/GO.wav";
+const char* LAP_SOUND_PATH = "Assets/LAP.wav";
+const char* CRASH_SOUND_PATH = "Assets/Crash.wav";
 
 const int RESTART_BUTTON_X_OFFSET = 172;
 const int MENU_BUTTONS_WIDTH = 87;

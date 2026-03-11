@@ -39,6 +39,7 @@ bool showLapBigText = false;
 bool changedBigText = false;
 bool gameMusicIsPlaying = false;
 bool menuMusicIsPlaying = false;
+bool carSpinning = false;
 
 int enemySpawnX;
 int enemySpawnY;
@@ -74,7 +75,11 @@ int gameStartTime = 0;
 //Used for updating events in game
 int gameTime = 0;
 
+//Used for game updates involving sprites
 int numGameFrames = 0;
+
+//Used for countdown sound
+int previousSound = -1;
 
 //All the possible group labels of objects
 enum groupLabels : size_t {
@@ -127,6 +132,10 @@ double* finishLineX = nullptr;
 
 Mix_Music *gameMusic = nullptr;
 Mix_Music *menuMusic = nullptr;
+Mix_Chunk *countdownSound = nullptr;
+Mix_Chunk *goSound = nullptr;
+Mix_Chunk *lapSound = nullptr;
+Mix_Chunk *crashSound = nullptr;
 
 //Add the edges of the road
 void AddBarrier(int x, int y) {
@@ -478,6 +487,10 @@ void Game::init() {
 
 	gameMusic = Mix_LoadMUS(GAME_MUSIC_PATH);
 	menuMusic = Mix_LoadMUS(MAIN_MENU_MUSIC_PATH);
+	countdownSound = Mix_LoadWAV(COUNTDOWN_SOUND_PATH);
+	goSound = Mix_LoadWAV(GO_SOUND_PATH);
+	lapSound = Mix_LoadWAV(LAP_SOUND_PATH);
+	crashSound = Mix_LoadWAV(CRASH_SOUND_PATH);
 
 	if (gameMusic == nullptr) {
 		cout << "ERROR! Game music failed to load!" << endl;
@@ -504,7 +517,10 @@ void Game::handleEvents() {
 					buttonVector.at(1)->getComponent<ButtonComponent>()
 					.isSelected) {
 
+					//Reset lives
 					lives = STARTING_LIVES;
+
+					//Hide game over screen
 					gameOver.getComponent<SpriteComponent>().hide();
 					restart.getComponent<SpriteComponent>().hide();
 					buttonVector.at(3)->getComponent<SpriteComponent>().hide();
@@ -513,14 +529,30 @@ void Game::handleEvents() {
 					//Hide the text
 					lap.getComponent<SpriteComponent>().hide();
 					mph.getComponent<SpriteComponent>().hide();
+
+					//Reset countdown, wasd, gameFrames, previousSound
 					countdown = true;
 					wasdShowing = true;
 					numGameFrames = 0;
+					previousSound = -1;
+
+					//Allow hitting enemies and reset music
+					Mix_HaltMusic();
+					canHitEnemy = true;
+					gameMusicIsPlaying = false;
+
+					//Reset lap text if necessary
+					showLapBigText = false;
+
+					//Hide main menu and reset big text
 					HideMainMenu();
 					ResetBigText();
+
+					//Reset game time
 					gameStartTime = currentTime;
 					menuIsOn = false;
-					cout << "1 clicked!" << endl;
+
+					//Destroy map
 					for (auto& l : topLines) {
 						l->destroy();
 					}
@@ -539,9 +571,12 @@ void Game::handleEvents() {
 					for (auto& m : mphDigits) {
 						m->destroy();
 					}
+					//Reset digits and map
 					numDigits = 0;
 					numMPHDigits = 0;
 					AddLines();
+
+					//Reset other times
 					roundStartTime = currentTime;
 					speedResetTime = 0;
 					ENEMY_SPAWNRATE_MS = START_ENEMY_MS;
@@ -552,7 +587,6 @@ void Game::handleEvents() {
 				else if (buttonVector.at(2)->getComponent<ButtonComponent>()
 				.isSelected) {
 					ShowSettings();
-					cout << "2 clicked!" << endl;
 				}
 
 				//menuIsOn could go inside the showMainMenu function,
@@ -562,28 +596,24 @@ void Game::handleEvents() {
 				.isSelected) {
 					ShowMainMenu();
 					menuIsOn = true;
-					cout << "3 clicked!" << endl;
 				}
 
 				//Easy button
 				else if (buttonVector.at(4)->getComponent<ButtonComponent>()
 				.isSelected) {
 					DIFFICULTY_MODIFIER = 1;
-					cout << "4 clicked!" << endl;
 				}
 
 				//Medium button
 				else if (buttonVector.at(5)->getComponent<ButtonComponent>()
 				.isSelected) {
 					DIFFICULTY_MODIFIER = 2;
-					cout << "5 clicked!" << endl;
 				}
 
 				//Hard button
 				else if (buttonVector.at(6)->getComponent<ButtonComponent>()
 				.isSelected) {
 					DIFFICULTY_MODIFIER = 4;
-					cout << "6 clicked!" << endl;
 				}
 			}
 			break;
@@ -591,6 +621,7 @@ void Game::handleEvents() {
 			break;
 	}
 }
+
 
 //Runs every frame
 void Game::update(){
@@ -602,10 +633,17 @@ void Game::update(){
 	SDL_GetMouseState(&mouseDestRect->x, &mouseDestRect->y);
 
 	//Music is handled
-	if (playerIsAlive) {
+	if (!menuIsOn) {
 		if (!gameMusicIsPlaying) {
-			Mix_PlayMusic(gameMusic, -1);
-			gameMusicIsPlaying = true;
+			//Stop menu music when game starts
+			Mix_HaltMusic();
+
+			//Wait until countdown finishes and player is alive
+			//before playing game music
+			if (playerIsAlive) {
+				Mix_PlayMusic(gameMusic, -1);
+				gameMusicIsPlaying = true;
+			}
 			menuMusicIsPlaying = false;
 		}
 	}
@@ -660,6 +698,16 @@ void Game::update(){
 			//Iterate through 3, 2, 1, GO
 			if (numGameFrames < 239) {
 				bigTextSprite->customIterations = numGameFrames / 60;
+				if (numGameFrames / 60 > previousSound 
+				&& numGameFrames < 179) {
+					Mix_PlayChannel(-1, countdownSound, 0);
+					++previousSound;
+				}
+				else if (numGameFrames / 60 > previousSound 
+				&& numGameFrames >= 179) {
+					Mix_PlayChannel(-1, goSound, 0);
+					++previousSound;
+				}
 				//Set speed modifier to prevent obstacles from moving
 				speedModifier = -3;
 			}
@@ -746,8 +794,11 @@ void Game::update(){
 						//When player hits enemy
 						if (cc->transform->tag == ENEMY_TAG) {
 							if (canHitEnemy) {
+								Mix_PlayChannel(-1, crashSound, 0);
+
 								//Prevent instant recollision
 								canHitEnemy = false;
+								carSpinning = true;
 
 								//Speed is reset, and timers are set
 								speedModifier = 0;
@@ -768,6 +819,12 @@ void Game::update(){
 								//Kills the player if that was their last life
 								if (lives < 1) {
 									playerIsAlive = false;
+
+									//Reset spinning animation
+									carSpinning = false;
+									player.getComponent<SpriteComponent>().setAngle(0);
+
+									//Show game over menu
 									gameOver.getComponent<SpriteComponent>().show();
 									restart.getComponent<SpriteComponent>().show();
 									buttonVector.at(3)->getComponent<TransformComponent>()
@@ -791,6 +848,8 @@ void Game::update(){
 						//When player hits finish line and completes a lap
 						if (cc->transform->tag == FINISH_LINE_TAG && !needToAddLapDigit
 							&& cc->collidable) {
+
+							Mix_PlayChannel(-1, lapSound, 0);
 
 							//Add 1 to lap /*MOVE THIS BACK*/
 							*lapIterations += 1;
@@ -874,8 +933,17 @@ void Game::update(){
 
 				//SPEED MODIFIER
 				if (speedModifier < 15.0) {
-					speedModifier = (gameTime - speedResetTime - roundStartTime) 
-					/ 1000.0;
+					speedModifier = (gameTime - speedResetTime - roundStartTime)
+						/ 1000.0;
+				}
+
+				//Spin car when crash occurs
+				if (carSpinning) {
+					player.getComponent<SpriteComponent>().setAngle((gameTime - enemyHitTime) / 2);
+					if (gameTime - enemyHitTime > 2000) {
+						carSpinning = false;
+						player.getComponent<SpriteComponent>().setAngle(0);
+					}
 				}
 
 				//If an enemy can spawn, spawn the enemy
@@ -977,7 +1045,8 @@ void Game::update(){
 
 					timeToAddMPHDigit = false;
 				}
-
+				
+				//Whenever player finishes a lap
 				if (showLapBigText) {
 					if ((numGameFrames - lapFrame) % 3 == 0) {
 						++lapFrameTracker;
@@ -994,6 +1063,7 @@ void Game::update(){
 
 				}
 
+				//needToAddLapDigit prevents multiple collisions simultaneously
 				if (finishLineX != nullptr) {
 					if (*finishLineX <
 						player.getComponent<TransformComponent>().position.x) {

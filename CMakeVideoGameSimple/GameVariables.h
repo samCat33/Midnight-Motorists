@@ -48,6 +48,10 @@ extern const char* TITLE_PATH;
 extern const char* MENU_BUTTONS_PATH;
 extern const char* GAME_MUSIC_PATH;
 extern const char* MAIN_MENU_MUSIC_PATH;
+extern const char* COUNTDOWN_SOUND_PATH;
+extern const char* GO_SOUND_PATH;
+extern const char* LAP_SOUND_PATH;
+extern const char* CRASH_SOUND_PATH;
 
 extern const int RESTART_BUTTON_X_OFFSET;
 extern const int MENU_BUTTONS_WIDTH;
