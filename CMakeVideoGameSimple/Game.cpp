@@ -338,6 +338,16 @@ void AddButton(int x, int y, int i) {
 	buttonVector.push_back(&button);
 }
 
+void DestroyMPHAndScoreDigits() {
+	//Destroy digits and mphDigits
+	for (auto& d : digits) {
+		d->destroy();
+	}
+	for (auto& m : mphDigits) {
+		m->destroy();
+	}
+}
+
 void AddMainMenu() {
 	title.addComponent<TransformComponent>(WINDOW_W * 0.05,
 	WINDOW_H * 0.1, WINDOW_H * 0.8, WINDOW_W * 0.4);
@@ -384,6 +394,7 @@ void ShowSettings() {
 }
 
 void AddAtariLines() {
+	//Adds 40 black lines to screen
 	for (int i = 0; i < 40; ++i) {
 		Entity& atariLine(manager.addEntity());
 		atariLine.addComponent<TransformComponent>(
@@ -397,6 +408,7 @@ void AddAtariLines() {
 }
 
 void draw(bool customSpeed, Entity* b) {
+	//Modify customSpeed if it has a custom speed
 	if (customSpeed) {
 		TransformComponent& t = b->getComponent<TransformComponent>();
 		t.speed = t.startSpeed + speedModifier;
@@ -562,14 +574,8 @@ void Game::handleEvents() {
 					for (auto& e : enemies) {
 						e->destroy();
 					}
-					for (auto& d : digits) {
-						d->destroy();
-					}
 					for (auto& l : lapDigits) {
 						l->destroy();
-					}
-					for (auto& m : mphDigits) {
-						m->destroy();
 					}
 					//Reset digits and map
 					numDigits = 0;
@@ -596,6 +602,7 @@ void Game::handleEvents() {
 				.isSelected) {
 					ShowMainMenu();
 					menuIsOn = true;
+					menuMusicIsPlaying = false;
 				}
 
 				//Easy button
@@ -820,6 +827,9 @@ void Game::update(){
 								if (lives < 1) {
 									playerIsAlive = false;
 
+									//Destroy MPH and score digits
+									DestroyMPHAndScoreDigits();
+
 									//Reset spinning animation
 									carSpinning = false;
 									player.getComponent<SpriteComponent>().setAngle(0);
@@ -837,8 +847,12 @@ void Game::update(){
 								//Ensures player gets pushed far enough away from enemy
 								resolve *= 12;
 
-								//Reset the MPH the player is going
-								ResetMPH();
+								//We only reset MPH if player is alive
+								//because we delete MPH digits when they die
+								if (playerIsAlive) {
+									//Reset the MPH the player is going
+									ResetMPH();
+								}
 							}
 							else {
 								resolve = resolve.Zero();
