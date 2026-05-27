@@ -27,10 +27,10 @@ struct KeyboardController : public Component {
 			x = 0;
 			y = 0;
 
-			if (state[SDL_SCANCODE_W]) y = -1;
-			if (state[SDL_SCANCODE_S]) y = 1;
-			if (state[SDL_SCANCODE_A]) x = -1;
-			if (state[SDL_SCANCODE_D]) x = 1;
+			if (state[SDL_SCANCODE_W] || state[SDL_SCANCODE_UP]) y = -1;
+			if (state[SDL_SCANCODE_S] || state[SDL_SCANCODE_DOWN]) y = 1;
+			if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT]) x = -1;
+			if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT]) x = 1;
 
 			y *= transform->speed;
 			x *= transform->speed;

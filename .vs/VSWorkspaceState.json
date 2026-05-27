@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CMakeVideoGameSimple"
+    "\\CMakeVideoGameSimple",
+    "\\CMakeVideoGameSimple\\Assets"
   ],
-  "SelectedNode": "\\CMakeVideoGameSimple\\CMakeLists.txt",
+  "SelectedNode": "\\CMakeVideoGameSimple\\Game.cpp",
   "PreviewInSolutionExplorer": false
 }

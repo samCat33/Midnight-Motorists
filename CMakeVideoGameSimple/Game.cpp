@@ -346,6 +346,14 @@ void DestroyMPHAndScoreDigits() {
 	for (auto& m : mphDigits) {
 		m->destroy();
 	}
+
+	for (auto& l : lapDigits) {
+		l->destroy();
+	}
+	
+	lap.getComponent<SpriteComponent>().hide();
+	mph.getComponent<SpriteComponent>().hide();
+
 }
 
 void AddMainMenu() {
@@ -473,7 +481,7 @@ void Game::init() {
 	gameOver.addComponent<SpriteComponent>(GAME_OVER_PATH, 0, 1, 0, 1100);
 	gameOver.getComponent<SpriteComponent>().hide();
 
-	//Tito cursor
+	//Blue cursor
 	mouseCursor.addComponent<TransformComponent>(0, 0, WINDOW_H * 0.1, 
 	WINDOW_W * 0.05);
 	mouseCursor.addComponent<SpriteComponent>(CURSOR_PATH, 0, 1, 
@@ -523,8 +531,14 @@ void Game::handleEvents() {
 		case SDL_QUIT:
 			gameRunning = false;
 			break;
+
+		//If the user releases the mouse button
 		case SDL_MOUSEBUTTONUP:
+
+			//If the left mouse button was released
 			if (event.button.button == SDL_BUTTON_LEFT) {
+
+				//If the player clicked restart (or start from the menu)
 				if (restartButton->isSelected ||
 					buttonVector.at(1)->getComponent<ButtonComponent>()
 					.isSelected) {
@@ -532,13 +546,16 @@ void Game::handleEvents() {
 					//Reset lives
 					lives = STARTING_LIVES;
 
+					//Reset player position
+					player.getComponent<TransformComponent>().position.x = 200;
+					player.getComponent<TransformComponent>().position.y = 200;
+
 					//Hide game over screen
 					gameOver.getComponent<SpriteComponent>().hide();
 					restart.getComponent<SpriteComponent>().hide();
 					buttonVector.at(3)->getComponent<SpriteComponent>().hide();
 					AddLives();
 
-					//Hide the text
 					lap.getComponent<SpriteComponent>().hide();
 					mph.getComponent<SpriteComponent>().hide();
 
@@ -833,6 +850,9 @@ void Game::update(){
 									//Reset spinning animation
 									carSpinning = false;
 									player.getComponent<SpriteComponent>().setAngle(0);
+
+									//Stop flashing lap if LAP was flashing
+									showLapBigText = false;
 
 									//Show game over menu
 									gameOver.getComponent<SpriteComponent>().show();

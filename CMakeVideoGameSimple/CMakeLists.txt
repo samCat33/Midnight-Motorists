@@ -34,7 +34,7 @@ set(HEADERS
 	"Vector2D.h"
 )
 
-add_executable(CMakeVideoGame ${SOURCES} ${HEADERS}   "ButtonComponent.h" "MainMenu.cpp")
+add_executable(CMakeVideoGame ${SOURCES} ${HEADERS}   "ButtonComponent.h" )
 
 target_link_libraries(CMakeVideoGame
 	SDL2::SDL2
