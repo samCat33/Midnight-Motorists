@@ -86,12 +86,17 @@ extern const int ENEMY_HITBOX_H;
 extern const int ENEMY_HITBOX_W;
 
 extern int ENEMY_SPAWNRATE_MS;
+extern const int MINIMUM_ENEMY_SPAWNRATE;
+extern const int ENEMY_SPAWNRATE_DECREASER;
 extern const int START_ENEMY_MS;
 extern const int LAP_SPAWN_RATE;
 extern const int ENEMY_HIT_COOLDOWN;
 extern int ENEMY_SPAWNX_RANGE;
 extern int ENEMY_SPAWNY_RANGE;
 
+extern const int EASY_DIFFICULTY_MODIFIER;
+extern const int MEDIUM_DIFFICULTY_MODIFIER;
+extern const int HARD_DIFFICULTY_MODIFIER;
 extern int DIFFICULTY_MODIFIER;
 
 extern int LINE_WIDTH;

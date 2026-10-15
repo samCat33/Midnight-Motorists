@@ -625,19 +625,19 @@ void Game::handleEvents() {
 				//Easy button
 				else if (buttonVector.at(4)->getComponent<ButtonComponent>()
 				.isSelected) {
-					DIFFICULTY_MODIFIER = 1;
+					DIFFICULTY_MODIFIER = EASY_DIFFICULTY_MODIFIER;
 				}
 
 				//Medium button
 				else if (buttonVector.at(5)->getComponent<ButtonComponent>()
 				.isSelected) {
-					DIFFICULTY_MODIFIER = 2;
+					DIFFICULTY_MODIFIER = MEDIUM_DIFFICULTY_MODIFIER;
 				}
 
 				//Hard button
 				else if (buttonVector.at(6)->getComponent<ButtonComponent>()
 				.isSelected) {
-					DIFFICULTY_MODIFIER = 4;
+					DIFFICULTY_MODIFIER = HARD_DIFFICULTY_MODIFIER;
 				}
 			}
 			break;
@@ -1026,9 +1026,11 @@ void Game::update(){
 				//spawn is > ENEMY_SPAWNRATE_MS (see GameVariables.cpp)
 				if (gameTime - enemySpawnTime > ENEMY_SPAWNRATE_MS) {
 					enemyCanSpawn = true;
-					if (ENEMY_SPAWNRATE_MS > (500 - 
+					if (ENEMY_SPAWNRATE_MS > (MINIMUM_ENEMY_SPAWNRATE - 
 						(50 * DIFFICULTY_MODIFIER))){
-						ENEMY_SPAWNRATE_MS -= 50 + (15 * DIFFICULTY_MODIFIER);
+						
+						ENEMY_SPAWNRATE_MS -= ENEMY_SPAWNRATE_DECREASER 
+						+ (15 * DIFFICULTY_MODIFIER);
 					}
 				}
 
